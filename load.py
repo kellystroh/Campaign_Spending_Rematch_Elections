@@ -25,6 +25,10 @@ results = results[results['race_ID'].isin(num_cand_df.reset_index()['index'])]
 results = results[results['gen.elect.pct'] != '?? ']
 
 results.loc[:,'gen.elect.pct'] = results['gen.elect.pct'].astype(float).copy()
+results = results[results['gen.elect.pct']>0]
+# edit for consistency
+results.loc[13800, 'gen.elect.pct'] = 48.01
+results.loc[23340, 'gen.elect.pct'] = 45.01
 
 # find indices of top 2 candidates per race 
 top2_cand = results.groupby('race_ID')['gen.elect.pct'].nlargest(2)
@@ -53,9 +57,6 @@ for key, value in cand_pair_dct.items():
 rematch_sets = [sorted(values) for key, values in rev_dict.items() if len(values) > 1]
 
 rematch_cand = [list(values) for values in cand_pair_dct2.values()]
-
-rematch_cand_A = [each[0] for each in rematch_cand if len(each)==2]
-rematch_cand_B = [each[1] for each in rematch_cand if len(each)==2]
 
 rematch_race_id = []
 for y in rematch_sets:
