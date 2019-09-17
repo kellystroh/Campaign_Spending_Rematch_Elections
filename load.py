@@ -3,7 +3,7 @@ import numpy as np
 import scipy as sp
 import scipy.stats as stats
 
-results_raw = pd.read_csv('data/dime.csv', low_memory=False)
+results_raw = pd.read_csv('data/dime_1979_2014.csv', low_memory=False)
 
 col_list = ['election', 'cycle', 'Cand.ID', 'ICPSR', 'name', 'lname', 'fname','party', 
             'state', 'seat', 'district', 'Incum.Chall', 'num.givers', 'num.givers.total', 'cand.gender',
@@ -48,7 +48,7 @@ for pair in top2_cand.index:
         cand_pair_dct2[pair[0]] = []
     cand_pair_dct2[pair[0]].append(cand_id)
 
-results.loc[:,'top2'] = results['race_ID'].copy().apply(lambda x: cand_pair_dct[x])
+results.loc[:,'top2'] = results['race_ID'].copy().apply(lambda x: cand_pair_dct[x] if x in cand_pair_dct else np.nan)
 
 from itertools import chain
 rev_dict = {}
