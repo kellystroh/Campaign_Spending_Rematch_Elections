@@ -13,12 +13,13 @@ Alas, elections are complex. It is difficult to even identify all of the influen
 
 And yet, we're talking about $4+ billion dollars, so we should probably be able to detect a difference... right?
 
-Detecting a difference may be the easy part; many studies have shown a positive correlation between challenger spending and votes received. The greater challenge lies in controlling for the many variables that could skew the results. Inspired by a study discussing in Freakonomics, I decided to focus specifically on rematch elections. In other words, instances in which the same two leading candidates have competed against each other multiple times. Levitt's paper (cited below) goes into specifics of how this approach controls for several 
+Detecting a difference may be the easy part; many studies have shown a positive correlation between challenger spending and votes received. The greater challenge lies in controlling for the many variables that could skew the results. Inspired by a study discussing in Freakonomics, I decided to focus specifically on rematch elections. In other words, instances in which the same two leading candidates have competed against each other multiple times. Levitt's paper (cited below) goes into specifics of how this approach controls for several externalities that could introduce bias. 
 
+I use Stanford's Database on Ideology, Money in Politics, and Elections (DIME). This is a comprehensive collection that combines campaign finance data, election results, and other relevant information. 
+[Download Data](https://dataverse.harvard.edu/api/access/datafile/2865309?gbrecs=true) 
+[Download Codebook](https://dataverse.harvard.edu/file.xhtml?fileId=2865308&version=2.2#)
 
-I use Stanford's Database on Ideology, Money in Politics, and Elections (DIME). **insert dataset download link** This is a comprehensive collection that combines campaign finance data, election results, and other relevant information.
-
-**insert codebook download link**
+****This repo is a work in progress.**** The data_cleaning and dime_regression notebooks are currently functional, but I am still adding commentary to dime_regression for improved clarity. 
 
 Steven D. Levitt (1994) '[Using Repeat Challengers to Estimate the Effect of Campaign Spending on Election Outcomes in the U.S. House](http://pricetheory.uchicago.edu/levitt/Papers/LevittUsingRepeatChallengers1994.pdf)', The Journal of Political Economy, Vol. 102: Iss. 4. 
 
